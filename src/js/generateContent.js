@@ -1,6 +1,6 @@
 import { generateCards } from './generateCards';
 import { generateNav } from './generateNav';
-import { NUMBER_OF_CARDS } from '../constants';
+import { NUMBER_OF_CARDS } from './constants';
 import data from '../data/data.json';
 
 export function generateContent(container) {

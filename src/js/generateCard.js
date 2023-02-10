@@ -1,7 +1,9 @@
+import { LABEL } from './constants';
+import { generateImgLabel } from './generateImgLabel';
 import { generateSliderButtons } from './generateSliderButtons';
 
 export function generateCard(container, data) {
-  const { title, price, oldPrice, photos } = data;
+  const { title, price, oldPrice, photos, label } = data;
 
   const card = document.createElement('div');
   card.classList.add('card');
@@ -90,6 +92,10 @@ export function generateCard(container, data) {
   scales.innerHTML = '<img src="../../static/icons/scales.svg"></img>';
   iconsWrapper.appendChild(scales);
 
+  const labelText = label.hit ? LABEL.hit : label.new ? LABEL.new : '';
+  if (labelText) {
+    generateImgLabel(imgWrapper, labelText);
+  }
   generateSliderButtons(imgWrapper, photos ? photos.length : 0);
 
   container.appendChild(card);

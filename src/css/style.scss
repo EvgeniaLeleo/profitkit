@@ -1,0 +1,51 @@
+@import 'vars';
+@import 'card';
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Rubik, sans-serif;
+  color: $text-color;
+
+  min-height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+
+  background-color: $bg-color;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 25px;
+
+  box-sizing: border-box;
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
+
+  list-style: none;
+
+  &__item {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.42;
+
+    color: $text-color-secondary;
+
+    cursor: pointer;
+
+    &_active {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 34px;
+      line-height: 1.18;
+      text-transform: uppercase;
+      color: $text-color;
+    }
+  }
+}
