@@ -68,10 +68,30 @@
 }
 
 .slide-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.cards-container {
+  position: relative;
+
   display: flex;
   justify-content: center;
   align-items: stretch;
   gap: 20px;
+
+  width: 100%;
+
+  animation: 0.25s ease-in;
+
+  &_current {
+    z-index: 0;
+  }
+
+  &_new {
+    position: absolute;
+    top: 0;
+  }
 }
 
 .arrow-wrapper {
@@ -96,5 +116,47 @@
 
   &:active {
     background-color: transparent;
+  }
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+
+  to {
+    left: -100%;
+    opacity: 0;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+    opacity: 0;
+  }
+
+  to {
+    left: 0;
+    opacity: 1;
   }
 }

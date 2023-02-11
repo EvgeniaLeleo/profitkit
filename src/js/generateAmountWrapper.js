@@ -1,4 +1,4 @@
-export function generateAmountWrapper(container, rest) {
+export const generateAmountWrapper = (container, rest) => {
   const amountWrapper = document.createElement('div');
   amountWrapper.classList.add('amountWrapper');
 
@@ -8,7 +8,8 @@ export function generateAmountWrapper(container, rest) {
     'amountWrapper__changeAmountIcon_left',
     'amountWrapper__changeAmountIcon_disabled'
   );
-  minus.innerHTML = '<img src="../../static/icons/minus.svg"></img>';
+  minus.innerHTML =
+    '<img src="../../static/icons/minus.svg" alt="Меньше"></img>';
   amountWrapper.appendChild(minus);
 
   const amount = document.createElement('p');
@@ -21,11 +22,14 @@ export function generateAmountWrapper(container, rest) {
     'amountWrapper__changeAmountIcon',
     'amountWrapper__changeAmountIcon_right'
   );
-  plus.innerHTML = '<img src="../../static/icons/plus.svg"></img>';
+  plus.innerHTML = '<img src="../../static/icons/plus.svg" alt="Больше"></img>';
   amountWrapper.appendChild(plus);
 
   container.appendChild(amountWrapper);
 
+  /**
+   * Amount buttons functionality
+   */
   minus.addEventListener('click', () => {
     let currentAmount = Number(amount.textContent);
 
@@ -57,4 +61,4 @@ export function generateAmountWrapper(container, rest) {
 
     amount.textContent = currentAmount;
   });
-}
+};

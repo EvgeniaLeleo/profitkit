@@ -1,9 +1,13 @@
 import { generateCard } from './generateCard';
 import { NUMBER_OF_CARDS } from './constants';
 
-export function generateCards(data) {
+export const generateSlide = (data, type) => {
   const slideContainer = document.querySelector('.slide-container');
-  slideContainer.innerHTML = '';
+
+  const newSlide = document.createElement('div');
+  newSlide.classList.add('cards-container', `cards-container_${type}`);
+
+  slideContainer.appendChild(newSlide);
 
   if (!data.length) {
     const warning = document.createElement('div');
@@ -17,7 +21,7 @@ export function generateCards(data) {
 
   for (let i = 0; i < numberOfItems; i++) {
     if (data[i]) {
-      generateCard(slideContainer, data[i]);
+      generateCard(newSlide, data[i]);
     }
   }
-}
+};

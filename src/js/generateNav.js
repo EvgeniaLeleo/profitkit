@@ -1,7 +1,8 @@
 import { DATA_KEYS } from './constants';
-import { generateCards } from './generateCards';
+import { generateSlide } from './generateSlide';
+// import { slider } from './slider/slider';
 
-export function generateNav(container, data) {
+export const generateNav = (container, data) => {
   const header = document.createElement('div');
   header.classList.add('header');
 
@@ -35,6 +36,9 @@ export function generateNav(container, data) {
 
   navLinks.forEach((navLink, i) => {
     navLink.addEventListener('click', () => {
+      const slideContainer = document.querySelector('.slide-container');
+      slideContainer.innerHTML = '';
+
       navLinks.forEach((navLink) => {
         navLink.classList.remove('nav__link_active');
       });
@@ -44,8 +48,9 @@ export function generateNav(container, data) {
         const items = [...data[DATA_KEYS[i]]].map(
           (id) => data.items.filter((item) => id === item.id)[0]
         );
-        generateCards(items);
+        generateSlide(items, 'current');
+        window.app.currentItems = items;
       }
     });
   });
-}
+};

@@ -1,10 +1,11 @@
-import { generateCards } from './generateCards';
+import { generateSlide } from './generateSlide';
 import { generateNav } from './generateNav';
 import { generateArrow } from './generateArrow';
 import { DATA, DIRECTION } from './constants';
+import { slider } from './slider/slider';
 import data from '../data/data.json';
 
-export function generateContent(container) {
+export const generateContent = (container) => {
   container.innerHTML = '';
   generateNav(container, data);
 
@@ -23,8 +24,9 @@ export function generateContent(container) {
     const items = [...data[DATA.popular]].map(
       (id) => data.items.filter((item) => id === item.id)[0]
     );
-    generateCards(items);
+    generateSlide(items, 'current');
+    window.app.currentItems = items;
   }
-}
 
-// "forYou": [4, 3, 2, 1]
+  slider(window.app.currentItems);
+};

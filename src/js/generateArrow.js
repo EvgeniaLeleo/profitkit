@@ -1,8 +1,8 @@
 import { DIRECTION } from './constants';
 
-export function generateArrow(container, direction) {
+export const generateArrow = (container, direction) => {
   const arrowWrapper = document.createElement('div');
-  arrowWrapper.classList.add('arrow-wrapper');
+  arrowWrapper.classList.add('arrow-wrapper', `arrow_${direction}`);
 
   const arrow = document.createElement('img');
   // arrow.classList.add('arrow');
@@ -19,4 +19,4 @@ export function generateArrow(container, direction) {
   }
 
   container.appendChild(arrowWrapper);
-}
+};

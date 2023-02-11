@@ -1,4 +1,4 @@
-export function generateSliderButtons(container, numberOfButtons) {
+export const generateSliderButtons = (container, numberOfButtons) => {
   const buttonsWrapper = document.createElement('div');
   buttonsWrapper.classList.add('card__buttonsWrapper');
   container.appendChild(buttonsWrapper);
@@ -15,4 +15,4 @@ export function generateSliderButtons(container, numberOfButtons) {
   }
 
   container.appendChild(buttonsWrapper);
-}
+};

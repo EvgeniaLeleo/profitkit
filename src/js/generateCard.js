@@ -3,7 +3,7 @@ import { generateAmountWrapper } from './generateAmountWrapper';
 import { generateImgLabel } from './generateImgLabel';
 import { generateSliderButtons } from './generateSliderButtons';
 
-export function generateCard(container, data) {
+export const generateCard = (container, data) => {
   const { title, price, oldPrice, photos, label, rest } = data;
 
   const card = document.createElement('div');
@@ -14,7 +14,7 @@ export function generateCard(container, data) {
   imgAndTitleWrapper.style.width = '100%';
 
   const priceAndFooterWrapper = document.createElement('div');
-  card.classList.add('card__price-footer-wrapper');
+  priceAndFooterWrapper.classList.add('card__price-footer-wrapper');
   card.appendChild(priceAndFooterWrapper);
   priceAndFooterWrapper.style.width = '100%';
 
@@ -70,12 +70,14 @@ export function generateCard(container, data) {
 
   const favorite = document.createElement('div');
   favorite.classList.add('card__icon');
-  favorite.innerHTML = '<img src="../../static/icons/heart.svg"></img>';
+  favorite.innerHTML =
+    '<img src="../../static/icons/heart.svg" alt="В избранное"></img>';
   iconsWrapper.appendChild(favorite);
 
   const scales = document.createElement('div');
   scales.classList.add('card__icon');
-  scales.innerHTML = '<img src="../../static/icons/scales.svg"></img>';
+  scales.innerHTML =
+    '<img src="../../static/icons/scales.svg" alt="Сравнить"></img>';
   iconsWrapper.appendChild(scales);
 
   const labelText = label.hit ? LABEL.hit : label.new ? LABEL.new : '';
@@ -85,4 +87,4 @@ export function generateCard(container, data) {
   generateSliderButtons(imgWrapper, photos ? photos.length : 0);
 
   container.appendChild(card);
-}
+};
