@@ -40,6 +40,8 @@
 
     border-bottom: 1px dashed $text-color-secondary;
 
+    transition: all 0.1s ease-out;
+
     cursor: pointer;
 
     &_active {
@@ -84,4 +86,15 @@
 
   border: 1px solid $border-color;
   border-radius: 5px;
+
+  cursor: pointer;
+  transition: background-color 0.15s ease-in;
+
+  &:hover {
+    background-color: $border-color;
+  }
+
+  &:active {
+    background-color: transparent;
+  }
 }

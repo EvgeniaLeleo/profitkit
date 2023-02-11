@@ -1,4 +1,5 @@
 import { LABEL } from './constants';
+import { generateAmountWrapper } from './generateAmountWrapper';
 import { generateImgLabel } from './generateImgLabel';
 import { generateSliderButtons } from './generateSliderButtons';
 
@@ -55,36 +56,12 @@ export function generateCard(container, data) {
   cardFooter.classList.add('card__footer');
   priceAndFooterWrapper.appendChild(cardFooter);
 
-  const amountWrapper = document.createElement('div');
-  amountWrapper.classList.add('amountWrapper');
-
-  const minus = document.createElement('div');
-  minus.classList.add(
-    'amountWrapper__changeAmountIcon',
-    'amountWrapper__changeAmountIcon_left'
-  );
-  minus.innerHTML = '<img src="../../static/icons/minus.svg"></img>';
-  amountWrapper.appendChild(minus);
-
-  const amount = document.createElement('p');
-  amount.classList.add('amountWrapper__amount');
-  amount.textContent = '1';
-  amountWrapper.appendChild(amount);
-
-  const plus = document.createElement('div');
-  plus.classList.add(
-    'amountWrapper__changeAmountIcon',
-    'amountWrapper__changeAmountIcon_right'
-  );
-  plus.innerHTML = '<img src="../../static/icons/plus.svg"></img>';
-  amountWrapper.appendChild(plus);
-
   const button = document.createElement('button');
   button.classList.add('card__button');
   button.innerHTML =
     '<div class="button__content"><img src="../../static/icons/cart.svg"></img><span>В корзину</span></div>';
 
-  cardFooter.appendChild(amountWrapper);
+  generateAmountWrapper(cardFooter);
   cardFooter.appendChild(button);
 
   const iconsWrapper = document.createElement('div');

@@ -1,51 +1,64 @@
-[
-  {
-    "title": "Тарелка керамическая ручной работы ⌀12",
-    "price": 600,
-    "oldPrice": 810,
-    "label": { "hit": false, "new": false },
-    "photos": [
-      null,
-      "../../static/img/plate.jpg",
-      "../../static/img/plate.jpg",
-      "../../static/img/plate.jpg",
-      "../../static/img/plate.jpg"
-    ]
-  },
-  {
-    "title": "Кашпо для цветов керамическое СИМПЛГРЕЙ",
-    "price": 450,
-    "label": { "hit": false, "new": false },
-    "photos": [
-      "../../static/img/flowerpot.jpg",
-      "../../static/img/flowerpot.jpg",
-      "../../static/img/flowerpot.jpg",
-      "../../static/img/flowerpot.jpg",
-      "../../static/img/flowerpot.jpg"
-    ]
-  },
-  {
-    "title": "Умные часы SMARTWATCH XM 109 черный",
-    "price": 12999,
-    "label": { "hit": true, "new": false },
-    "photos": [
-      "../../static/img/smartwatch.jpg",
-      "../../static/img/smartwatch.jpg",
-      "../../static/img/smartwatch.jpg",
-      "../../static/img/smartwatch.jpg",
-      "../../static/img/smartwatch.jpg"
-    ]
-  },
-  {
-    "title": "Золотое кольцо МАЛИКА с аметистом и фианитами",
-    "price": 15700,
-    "label": { "hit": false, "new": true },
-    "photos": [
-      "../../static/img/ring.jpg",
-      "../../static/img/ring.jpg",
-      "../../static/img/ring.jpg",
-      "../../static/img/ring.jpg",
-      "../../static/img/ring.jpg"
-    ]
-  }
-]
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Тарелка керамическая ручной работы ⌀12",
+      "price": 600,
+      "oldPrice": 810,
+      "rest": 50,
+      "label": { "hit": false, "new": false },
+      "photos": [
+        null,
+        "../../static/img/plate.jpg",
+        "../../static/img/plate.jpg",
+        "../../static/img/plate.jpg",
+        "../../static/img/plate.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Кашпо для цветов керамическое СИМПЛГРЕЙ",
+      "price": 450,
+      "rest": 10,
+      "label": { "hit": false, "new": false },
+      "photos": [
+        "../../static/img/flowerpot.jpg",
+        "../../static/img/flowerpot.jpg",
+        "../../static/img/flowerpot.jpg",
+        "../../static/img/flowerpot.jpg",
+        "../../static/img/flowerpot.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Умные часы SMARTWATCH XM 109 черный",
+      "price": 12999,
+      "rest": 5,
+      "label": { "hit": true, "new": false },
+      "photos": [
+        "../../static/img/smartwatch.jpg",
+        "../../static/img/smartwatch.jpg",
+        "../../static/img/smartwatch.jpg",
+        "../../static/img/smartwatch.jpg",
+        "../../static/img/smartwatch.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Золотое кольцо МАЛИКА с аметистом и фианитами",
+      "price": 15700,
+      "rest": 5,
+      "label": { "hit": false, "new": true },
+      "photos": [
+        "../../static/img/ring.jpg",
+        "../../static/img/ring.jpg",
+        "../../static/img/ring.jpg",
+        "../../static/img/ring.jpg",
+        "../../static/img/ring.jpg"
+      ]
+    }
+  ],
+  "popular": [1, 2, 3, 4],
+  "recent": [2, 1, 4, 3],
+  "forYou": [4, 3, 2, 1]
+}
