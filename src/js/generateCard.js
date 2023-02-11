@@ -4,7 +4,7 @@ import { generateImgLabel } from './generateImgLabel';
 import { generateSliderButtons } from './generateSliderButtons';
 
 export function generateCard(container, data) {
-  const { title, price, oldPrice, photos, label } = data;
+  const { title, price, oldPrice, photos, label, rest } = data;
 
   const card = document.createElement('div');
   card.classList.add('card');
@@ -61,7 +61,7 @@ export function generateCard(container, data) {
   button.innerHTML =
     '<div class="button__content"><img src="../../static/icons/cart.svg"></img><span>В корзину</span></div>';
 
-  generateAmountWrapper(cardFooter);
+  generateAmountWrapper(cardFooter, rest);
   cardFooter.appendChild(button);
 
   const iconsWrapper = document.createElement('div');

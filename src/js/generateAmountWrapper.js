@@ -1,18 +1,19 @@
-export function generateAmountWrapper(container) {
+export function generateAmountWrapper(container, rest) {
   const amountWrapper = document.createElement('div');
   amountWrapper.classList.add('amountWrapper');
 
   const minus = document.createElement('div');
   minus.classList.add(
     'amountWrapper__changeAmountIcon',
-    'amountWrapper__changeAmountIcon_left'
+    'amountWrapper__changeAmountIcon_left',
+    'amountWrapper__changeAmountIcon_disabled'
   );
   minus.innerHTML = '<img src="../../static/icons/minus.svg"></img>';
   amountWrapper.appendChild(minus);
 
   const amount = document.createElement('p');
-  amount.classList.add('amountWrapper__amount');
   amount.textContent = '1';
+  amount.classList.add('amountWrapper__amount');
   amountWrapper.appendChild(amount);
 
   const plus = document.createElement('div');
@@ -27,13 +28,33 @@ export function generateAmountWrapper(container) {
 
   minus.addEventListener('click', () => {
     let currentAmount = Number(amount.textContent);
+
     if (currentAmount > 1) {
-      amount.textContent = --currentAmount;
+      currentAmount--;
+      if (currentAmount === 1) {
+        minus.classList.add('amountWrapper__changeAmountIcon_disabled');
+      }
+      if (currentAmount < rest) {
+        plus.classList.remove('amountWrapper__changeAmountIcon_disabled');
+      }
     }
+
+    amount.textContent = currentAmount;
   });
 
   plus.addEventListener('click', () => {
     let currentAmount = Number(amount.textContent);
-    amount.textContent = ++currentAmount;
+
+    if (currentAmount < rest) {
+      currentAmount++;
+      if (currentAmount === rest) {
+        plus.classList.add('amountWrapper__changeAmountIcon_disabled');
+      }
+      if (currentAmount > 1) {
+        minus.classList.remove('amountWrapper__changeAmountIcon_disabled');
+      }
+    }
+
+    amount.textContent = currentAmount;
   });
 }

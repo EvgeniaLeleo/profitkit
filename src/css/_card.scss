@@ -266,6 +266,10 @@
     &_right {
       padding-left: 10px;
     }
+
+    &_disabled {
+      cursor: not-allowed;
+    }
   }
 }
 
