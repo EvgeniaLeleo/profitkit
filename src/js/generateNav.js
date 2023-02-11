@@ -50,6 +50,9 @@ export const generateNav = (container, data) => {
         );
         generateSlide(items, 'current');
         window.app.currentItems = items;
+      } else {
+        slideContainer.textContent = 'Пока здесь ничего нет';
+        window.app.currentItems = [];
       }
     });
   });

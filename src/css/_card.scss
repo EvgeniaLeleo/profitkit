@@ -37,7 +37,25 @@
     margin-bottom: 10px;
 
     background-color: $img-bg-color;
-    background-size: cover;
+    overflow: hidden;
+  }
+
+  &__img {
+    height: 100%;
+
+    box-shadow: 12px 0 15px -4px $img-shadow-color,
+      -12px 0 8px -4px $img-shadow-color;
+
+    animation: 0.25s ease-out;
+
+    &_current {
+      z-index: 0;
+    }
+
+    &_new {
+      position: absolute;
+      top: 0;
+    }
   }
 
   &__img-label {

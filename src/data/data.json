@@ -10,9 +10,9 @@
       "photos": [
         null,
         "../../static/img/plate.jpg",
-        "../../static/img/plate.jpg",
-        "../../static/img/plate.jpg",
-        "../../static/img/plate.jpg"
+        "../../static/img/plate3.jpg",
+        "../../static/img/plate4.jpg",
+        "../../static/img/plate5.jpg"
       ]
     },
     {
@@ -23,10 +23,10 @@
       "label": { "hit": false, "new": false },
       "photos": [
         "../../static/img/flowerpot.jpg",
-        "../../static/img/flowerpot.jpg",
-        "../../static/img/flowerpot.jpg",
-        "../../static/img/flowerpot.jpg",
-        "../../static/img/flowerpot.jpg"
+        "../../static/img/flowerpot2.jpg",
+        "../../static/img/flowerpot3.jpg",
+        "../../static/img/flowerpot4.jpg",
+        "../../static/img/flowerpot5.jpg"
       ]
     },
     {
@@ -37,10 +37,10 @@
       "label": { "hit": true, "new": false },
       "photos": [
         "../../static/img/smartwatch.jpg",
-        "../../static/img/smartwatch.jpg",
-        "../../static/img/smartwatch.jpg",
-        "../../static/img/smartwatch.jpg",
-        "../../static/img/smartwatch.jpg"
+        "../../static/img/smartwatch2.jpg",
+        "../../static/img/smartwatch3.jpg",
+        "../../static/img/smartwatch4.jpg",
+        "../../static/img/smartwatch5.jpg"
       ]
     },
     {
@@ -51,10 +51,10 @@
       "label": { "hit": false, "new": true },
       "photos": [
         "../../static/img/ring.jpg",
-        "../../static/img/ring.jpg",
-        "../../static/img/ring.jpg",
-        "../../static/img/ring.jpg",
-        "../../static/img/ring.jpg"
+        "../../static/img/ring2.jpg",
+        "../../static/img/ring3.jpg",
+        "../../static/img/ring4.jpg",
+        "../../static/img/ring5.jpg"
       ]
     }
   ],

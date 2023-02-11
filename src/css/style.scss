@@ -69,6 +69,7 @@
 
 .slide-container {
   position: relative;
+
   overflow: hidden;
 }
 
@@ -82,7 +83,7 @@
 
   width: 100%;
 
-  animation: 0.25s ease-in;
+  animation: 0.25s ease-out;
 
   &_current {
     z-index: 0;
@@ -145,14 +146,14 @@
 
   to {
     left: -100%;
-    opacity: 0;
+    opacity: 0.75;
   }
 }
 
 @keyframes right {
   from {
     left: 100%;
-    opacity: 0;
+    opacity: 0.75;
   }
 
   to {

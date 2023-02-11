@@ -1,4 +1,4 @@
-import { generateSlide } from './../generateSlide';
+import { generateSlide } from '../generateSlide';
 import { hideSlide } from './hideSlide';
 import { showSlide } from './showSlide';
 

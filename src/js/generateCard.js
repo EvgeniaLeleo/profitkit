@@ -1,10 +1,10 @@
 import { LABEL } from './constants';
 import { generateAmountWrapper } from './generateAmountWrapper';
 import { generateImgLabel } from './generateImgLabel';
-import { generateSliderButtons } from './generateSliderButtons';
+import { generateImgSliderButtons } from './generateImgSliderButtons';
 
-export const generateCard = (container, data) => {
-  const { title, price, oldPrice, photos, label, rest } = data;
+export const generateCard = (container, dataItem) => {
+  const { title, price, oldPrice, photos, label, rest } = dataItem;
 
   const card = document.createElement('div');
   card.classList.add('card');
@@ -20,15 +20,19 @@ export const generateCard = (container, data) => {
 
   const imgWrapper = document.createElement('div');
   imgWrapper.classList.add('card__img-wrapper');
-  if (photos) {
-    photos.length && data.photos[0]
-      ? (imgWrapper.style.backgroundImage = `url(${data.photos[0]})`)
-      : (imgWrapper.textContent = 'нет фото');
+
+  const img = document.createElement('img');
+  img.classList.add('card__img', 'card__img_current');
+  imgWrapper.appendChild(img);
+
+  if (photos && photos.length && photos[0]) {
+    img.src = photos[0];
+    img.alt = title ? title : 'No title';
+  } else {
+    img.src = '../../../static/img/no-photo.jpg';
+    img.alt = title ? title : 'No photo';
   }
 
-  if (!photos) {
-    imgWrapper.textContent = 'нет фото';
-  }
   imgAndTitleWrapper.appendChild(imgWrapper);
 
   const itemTitle = document.createElement('p');
@@ -84,7 +88,8 @@ export const generateCard = (container, data) => {
   if (labelText) {
     generateImgLabel(imgWrapper, labelText);
   }
-  generateSliderButtons(imgWrapper, photos ? photos.length : 0);
+
+  generateImgSliderButtons(imgWrapper, photos ? photos.length : 0, dataItem);
 
   container.appendChild(card);
 };

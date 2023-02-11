@@ -2,7 +2,7 @@ import { generateSlide } from './generateSlide';
 import { generateNav } from './generateNav';
 import { generateArrow } from './generateArrow';
 import { DATA, DIRECTION } from './constants';
-import { slider } from './slider/slider';
+import { slider } from './cardsSlider/slider';
 import data from '../data/data.json';
 
 export const generateContent = (container) => {

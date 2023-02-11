@@ -1,4 +1,10 @@
-export const generateSliderButtons = (container, numberOfButtons) => {
+import { imgSliderButtonsFunctionality } from './imgSliderButtonsFunctionality';
+
+export const generateImgSliderButtons = (
+  container,
+  numberOfButtons,
+  dataItem
+) => {
   const buttonsWrapper = document.createElement('div');
   buttonsWrapper.classList.add('card__buttonsWrapper');
   container.appendChild(buttonsWrapper);
@@ -9,10 +15,7 @@ export const generateSliderButtons = (container, numberOfButtons) => {
     buttonsWrapper.appendChild(button);
   }
 
-  const buttons = container.querySelectorAll('.card__img-button');
-  if (buttons && buttons.length) {
-    buttons[0].classList.add('card__img-button_active');
-  }
+  imgSliderButtonsFunctionality(container, dataItem);
 
   container.appendChild(buttonsWrapper);
 };
