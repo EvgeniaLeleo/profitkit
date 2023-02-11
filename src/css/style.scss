@@ -26,16 +26,19 @@
   margin: 0;
   margin-bottom: 40px;
   padding: 0;
+  padding-left: 86px;
 
   list-style: none;
 
-  &__item {
+  &__link {
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 1.42;
 
     color: $text-color-secondary;
+
+    border-bottom: 1px dashed $text-color-secondary;
 
     cursor: pointer;
 
@@ -46,6 +49,39 @@
       line-height: 1.18;
       text-transform: uppercase;
       color: $text-color;
+
+      border-bottom: none;
     }
   }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 46px;
+
+  overflow: hidden;
+}
+
+.slide-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: auto;
+  aspect-ratio: 1/1;
+  box-sizing: border-box;
+
+  border: 1px solid $border-color;
+  border-radius: 5px;
 }

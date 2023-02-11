@@ -8,6 +8,15 @@ export function generateCard(container, data) {
   const card = document.createElement('div');
   card.classList.add('card');
 
+  const imgAndTitleWrapper = document.createElement('div');
+  card.appendChild(imgAndTitleWrapper);
+  imgAndTitleWrapper.style.width = '100%';
+
+  const priceAndFooterWrapper = document.createElement('div');
+  card.classList.add('card__price-footer-wrapper');
+  card.appendChild(priceAndFooterWrapper);
+  priceAndFooterWrapper.style.width = '100%';
+
   const imgWrapper = document.createElement('div');
   imgWrapper.classList.add('card__img-wrapper');
   if (photos) {
@@ -19,16 +28,16 @@ export function generateCard(container, data) {
   if (!photos) {
     imgWrapper.textContent = 'нет фото';
   }
-  card.appendChild(imgWrapper);
+  imgAndTitleWrapper.appendChild(imgWrapper);
 
   const itemTitle = document.createElement('p');
   itemTitle.classList.add('card__title');
   itemTitle.textContent = title;
-  card.appendChild(itemTitle);
+  imgAndTitleWrapper.appendChild(itemTitle);
 
   const priceWrapper = document.createElement('div');
   priceWrapper.classList.add('card__priceWrapper');
-  card.appendChild(priceWrapper);
+  priceAndFooterWrapper.appendChild(priceWrapper);
 
   const itemPrice = document.createElement('p');
   itemPrice.classList.add('card__price');
@@ -44,7 +53,7 @@ export function generateCard(container, data) {
 
   const cardFooter = document.createElement('div');
   cardFooter.classList.add('card__footer');
-  card.appendChild(cardFooter);
+  priceAndFooterWrapper.appendChild(cardFooter);
 
   const amountWrapper = document.createElement('div');
   amountWrapper.classList.add('amountWrapper');
