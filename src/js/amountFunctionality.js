@@ -8,9 +8,9 @@ export const amountFunctionality = ({ amount, rest, plus, minus }) => {
 
     if (Number(e.target.value) >= rest) {
       e.target.value = rest;
-      plus.classList.add('amountWrapper__changeAmountIcon_disabled');
+      plus.classList.add('amount-wrapper__change-amount-icon_disabled');
     } else {
-      plus.classList.remove('amountWrapper__changeAmountIcon_disabled');
+      plus.classList.remove('amount-wrapper__change-amount-icon_disabled');
     }
   });
 
@@ -18,11 +18,11 @@ export const amountFunctionality = ({ amount, rest, plus, minus }) => {
     const value = e.target.value;
     e.target.value = value.replace(/[^0-9]/gi, '');
 
-    if (Number(e.target.value) <= 0) {
+    if (Number(e.target.value) <= 1) {
       e.target.value = 1;
-      minus.classList.add('amountWrapper__changeAmountIcon_disabled');
+      minus.classList.add('amount-wrapper__change-amount-icon_disabled');
     } else {
-      minus.classList.remove('amountWrapper__changeAmountIcon_disabled');
+      minus.classList.remove('amount-wrapper__change-amount-icon_disabled');
     }
   });
 
@@ -34,14 +34,14 @@ export const amountFunctionality = ({ amount, rest, plus, minus }) => {
     let currentAmount = Number(amount.value);
 
     if (currentAmount === 1) {
-      minus.classList.add('amountWrapper__changeAmountIcon_disabled');
+      minus.classList.add('amount-wrapper__change-amount-icon_disabled');
     }
 
     if (currentAmount > 1) {
       currentAmount--;
 
       if (currentAmount < rest) {
-        plus.classList.remove('amountWrapper__changeAmountIcon_disabled');
+        plus.classList.remove('amount-wrapper__change-amount-icon_disabled');
       }
     }
 
@@ -52,14 +52,14 @@ export const amountFunctionality = ({ amount, rest, plus, minus }) => {
     let currentAmount = Number(amount.value);
 
     if (currentAmount === rest) {
-      plus.classList.add('amountWrapper__changeAmountIcon_disabled');
+      plus.classList.add('amount-wrapper__change-amount-icon_disabled');
     }
 
     if (currentAmount < rest) {
       currentAmount++;
 
       if (currentAmount > 1) {
-        minus.classList.remove('amountWrapper__changeAmountIcon_disabled');
+        minus.classList.remove('amount-wrapper__change-amount-icon_disabled');
       }
     }
 
