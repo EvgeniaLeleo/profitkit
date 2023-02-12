@@ -1,10 +1,14 @@
+import { DIRECTION } from '../constants';
+
 export const imgSlider = (index, prevIndex, container, dataItem) => {
-  if (index === prevIndex.value && !dataItem) return;
+  let prev = prevIndex.value;
+
+  if (index === prev || !dataItem) return;
 
   const { photos, title } = dataItem;
 
   const imgPrev = container.querySelector('.card__img_current');
-  imgPrev.classList.add(index > prevIndex.value ? 'to-left' : 'to-right');
+  imgPrev.classList.add(index > prev ? DIRECTION.toLeft : DIRECTION.toRight);
 
   imgPrev.addEventListener('animationend', () => {
     container.removeChild(imgPrev);
@@ -18,11 +22,13 @@ export const imgSlider = (index, prevIndex, container, dataItem) => {
   imgNext.alt = title ? title : 'No title';
   container.appendChild(imgNext);
 
-  imgNext.classList.add(index > prevIndex.value ? 'from-right' : 'from-left');
+  imgNext.classList.add(
+    index > prev ? DIRECTION.fromRight : DIRECTION.fromLeft
+  );
 
   imgNext.addEventListener('animationend', () => {
     imgNext.classList.remove(
-      index > prevIndex.value ? 'from-right' : 'from-left'
+      index > prev ? DIRECTION.fromRight : DIRECTION.fromLeft
     );
     imgNext.classList.add('card__img_current');
   });

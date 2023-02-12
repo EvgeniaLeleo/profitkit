@@ -6,7 +6,6 @@ export const hideSlide = (slide, direction) => {
 
   slide.addEventListener('animationend', () => {
     const current = document.body.querySelector('.cards-container_current');
-
     slideContainer.removeChild(current);
   });
 };

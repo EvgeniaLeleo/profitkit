@@ -1,11 +1,12 @@
 import { generateSlide } from '../generateSlide';
 import { hideSlide } from './hideSlide';
 import { showSlide } from './showSlide';
+import { DIRECTION } from '../constants';
 
 const arrowRightCallback = (items) => {
   const currentSlide = document.querySelector('.cards-container_current');
 
-  hideSlide(currentSlide, 'to-left');
+  hideSlide(currentSlide, DIRECTION.toLeft);
 
   if (items) {
     generateSlide(items, 'new');
@@ -13,20 +14,20 @@ const arrowRightCallback = (items) => {
 
   const nextSlide = document.querySelector('.cards-container_new');
 
-  showSlide(nextSlide, 'from-right');
+  showSlide(nextSlide, DIRECTION.fromRight);
 };
 
 const arrowLeftCallback = (items) => {
   const currentSlide = document.querySelector('.cards-container_current');
 
-  hideSlide(currentSlide, 'to-right');
+  hideSlide(currentSlide, DIRECTION.toRight);
 
   if (items) {
     generateSlide(items, 'new');
   }
 
   const nextSlide = document.querySelector('.cards-container_new');
-  showSlide(nextSlide, 'from-left');
+  showSlide(nextSlide, DIRECTION.fromLeft);
 };
 
 export const slider = () => {
