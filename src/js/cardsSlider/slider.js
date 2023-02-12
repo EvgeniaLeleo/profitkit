@@ -6,28 +6,28 @@ import { DIRECTION } from '../constants';
 const arrowRightCallback = (items) => {
   const currentSlide = document.querySelector('.cards-container_current');
 
-  hideSlide(currentSlide, DIRECTION.toLeft);
+  hideSlide({ slide: currentSlide, direction: DIRECTION.toLeft });
 
   if (items) {
-    generateSlide(items, 'new');
+    generateSlide({ data: items, type: 'new' });
   }
 
   const nextSlide = document.querySelector('.cards-container_new');
 
-  showSlide(nextSlide, DIRECTION.fromRight);
+  showSlide({ slide: nextSlide, direction: DIRECTION.fromRight });
 };
 
 const arrowLeftCallback = (items) => {
   const currentSlide = document.querySelector('.cards-container_current');
 
-  hideSlide(currentSlide, DIRECTION.toRight);
+  hideSlide({ slide: currentSlide, direction: DIRECTION.toRight });
 
   if (items) {
-    generateSlide(items, 'new');
+    generateSlide({ data: items, type: 'new' });
   }
 
   const nextSlide = document.querySelector('.cards-container_new');
-  showSlide(nextSlide, DIRECTION.fromLeft);
+  showSlide({ slide: nextSlide, direction: DIRECTION.fromLeft });
 };
 
 export const slider = () => {

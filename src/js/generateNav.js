@@ -1,8 +1,7 @@
 import { DATA_KEYS } from './constants';
 import { generateSlide } from './generateSlide';
-// import { slider } from './slider/slider';
 
-export const generateNav = (container, data) => {
+export const generateNav = ({ container, data }) => {
   const header = document.createElement('div');
   header.classList.add('header');
 
@@ -48,7 +47,7 @@ export const generateNav = (container, data) => {
         const items = [...data[DATA_KEYS[i]]].map(
           (id) => data.items.filter((item) => id === item.id)[0]
         );
-        generateSlide(items, 'current');
+        generateSlide({ data: items, type: 'current' });
         window.app.currentItems = items;
       } else {
         slideContainer.textContent = 'Пока здесь ничего нет';

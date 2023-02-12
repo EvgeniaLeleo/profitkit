@@ -1,11 +1,10 @@
 import { DIRECTION } from './constants';
 
-export const generateArrow = (container, direction) => {
+export const generateArrow = ({ container, direction }) => {
   const arrowWrapper = document.createElement('div');
   arrowWrapper.classList.add('arrow-wrapper', `arrow_${direction}`);
 
   const arrow = document.createElement('img');
-  // arrow.classList.add('arrow');
   arrowWrapper.appendChild(arrow);
 
   if (direction === DIRECTION.left) {

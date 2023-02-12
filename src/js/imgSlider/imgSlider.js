@@ -1,6 +1,6 @@
 import { DIRECTION } from '../constants';
 
-export const imgSlider = (index, prevIndex, container, dataItem) => {
+export const imgSlider = ({ index, prevIndex, container, dataItem }) => {
   let prev = prevIndex.value;
 
   if (index === prev || !dataItem) return;

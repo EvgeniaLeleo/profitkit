@@ -3,7 +3,7 @@ import { generateAmountWrapper } from './generateAmountWrapper';
 import { generateImgLabel } from './generateImgLabel';
 import { generateImgSliderButtons } from './generateImgSliderButtons';
 
-export const generateCard = (container, dataItem) => {
+export const generateCard = ({ container, dataItem }) => {
   const { title, price, oldPrice, photos, label, rest } = dataItem;
 
   const card = document.createElement('div');
@@ -65,7 +65,7 @@ export const generateCard = (container, dataItem) => {
   button.innerHTML =
     '<div class="button__content"><img src="../../static/icons/cart.svg"></img><span>В корзину</span></div>';
 
-  generateAmountWrapper(cardFooter, rest);
+  generateAmountWrapper({ container: cardFooter, rest });
   cardFooter.appendChild(button);
 
   const iconsWrapper = document.createElement('div');
@@ -86,10 +86,14 @@ export const generateCard = (container, dataItem) => {
 
   const labelText = label.hit ? LABEL.hit : label.new ? LABEL.new : '';
   if (labelText) {
-    generateImgLabel(imgWrapper, labelText);
+    generateImgLabel({ container: imgWrapper, labelText });
   }
 
-  generateImgSliderButtons(imgWrapper, photos ? photos.length : 0, dataItem);
+  generateImgSliderButtons({
+    container: imgWrapper,
+    numberOfButtons: photos ? photos.length : 0,
+    dataItem,
+  });
 
   container.appendChild(card);
 };

@@ -1,6 +1,6 @@
 import { imgSlider } from './imgSlider/imgSlider';
 
-export const imgSliderButtonsFunctionality = (container, dataItem) => {
+export const imgSliderButtonsFunctionality = ({ container, dataItem }) => {
   const buttons = container.querySelectorAll('.card__img-button');
 
   if (buttons && buttons.length) {
@@ -13,7 +13,7 @@ export const imgSliderButtonsFunctionality = (container, dataItem) => {
           button.classList.remove('card__img-button_active');
         });
 
-        imgSlider(index, prevIndex, container, dataItem);
+        imgSlider({ index, prevIndex, container, dataItem });
 
         button.classList.add('card__img-button_active');
       });

@@ -1,6 +1,6 @@
 import { LABEL } from './constants';
 
-export const generateImgLabel = (container, labelText) => {
+export const generateImgLabel = ({ container, labelText }) => {
   const label = document.createElement('div');
   label.classList.add('card__img-label');
 

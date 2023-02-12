@@ -1,4 +1,4 @@
-export const showSlide = (slide, direction) => {
+export const showSlide = ({ slide, direction }) => {
   if (!slide) return;
 
   slide.classList.add('cards-container_new', direction);

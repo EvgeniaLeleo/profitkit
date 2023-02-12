@@ -1,7 +1,7 @@
 import { generateCard } from './generateCard';
 import { NUMBER_OF_CARDS } from './constants';
 
-export const generateSlide = (data, type) => {
+export const generateSlide = ({ data, type }) => {
   if (!data.length) return;
 
   const slideContainer = document.querySelector('.slide-container');
@@ -15,7 +15,7 @@ export const generateSlide = (data, type) => {
 
   for (let i = 0; i < numberOfItems; i++) {
     if (data[i]) {
-      generateCard(newSlide, data[i]);
+      generateCard({ container: newSlide, dataItem: data[i] });
     }
   }
 };

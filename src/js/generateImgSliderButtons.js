@@ -1,10 +1,10 @@
 import { imgSliderButtonsFunctionality } from './imgSliderButtonsFunctionality';
 
-export const generateImgSliderButtons = (
+export const generateImgSliderButtons = ({
   container,
   numberOfButtons,
-  dataItem
-) => {
+  dataItem,
+}) => {
   const buttonsWrapper = document.createElement('div');
   buttonsWrapper.classList.add('card__buttonsWrapper');
   container.appendChild(buttonsWrapper);
@@ -15,7 +15,7 @@ export const generateImgSliderButtons = (
     buttonsWrapper.appendChild(button);
   }
 
-  imgSliderButtonsFunctionality(container, dataItem);
+  imgSliderButtonsFunctionality({ container, dataItem });
 
   container.appendChild(buttonsWrapper);
 };
