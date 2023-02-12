@@ -83,7 +83,7 @@
     background-position: center;
   }
 
-  &__iconsWrapper {
+  &__icons-wrapper {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -93,7 +93,7 @@
     gap: 5px;
   }
 
-  &__buttonsWrapper {
+  &__buttons-wrapper {
     position: absolute;
     z-index: 1;
 
@@ -173,7 +173,7 @@
     box-sizing: border-box;
   }
 
-  &__priceWrapper {
+  &__price-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -245,7 +245,7 @@
   }
 }
 
-.amountWrapper {
+.amount-wrapper {
   position: relative;
 
   display: flex;
@@ -278,7 +278,7 @@
     border-radius: 5px;
   }
 
-  &__changeAmountIcon {
+  &__change-amount-icon {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);

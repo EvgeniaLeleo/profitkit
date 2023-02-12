@@ -41,7 +41,7 @@ export const generateCard = ({ container, dataItem }) => {
   imgAndTitleWrapper.appendChild(itemTitle);
 
   const priceWrapper = document.createElement('div');
-  priceWrapper.classList.add('card__priceWrapper');
+  priceWrapper.classList.add('card__price-wrapper');
   priceAndFooterWrapper.appendChild(priceWrapper);
 
   const itemPrice = document.createElement('p');
@@ -69,7 +69,7 @@ export const generateCard = ({ container, dataItem }) => {
   cardFooter.appendChild(button);
 
   const iconsWrapper = document.createElement('div');
-  iconsWrapper.classList.add('card__iconsWrapper');
+  iconsWrapper.classList.add('card__icons-wrapper');
   card.appendChild(iconsWrapper);
 
   const favorite = document.createElement('div');

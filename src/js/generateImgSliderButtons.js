@@ -6,7 +6,7 @@ export const generateImgSliderButtons = ({
   dataItem,
 }) => {
   const buttonsWrapper = document.createElement('div');
-  buttonsWrapper.classList.add('card__buttonsWrapper');
+  buttonsWrapper.classList.add('card__buttons-wrapper');
   container.appendChild(buttonsWrapper);
 
   for (let i = 0; i < numberOfButtons; i++) {
