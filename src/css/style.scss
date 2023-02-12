@@ -1,0 +1,167 @@
+@import 'vars';
+@import 'card';
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Rubik, sans-serif;
+  color: $text-color;
+
+  min-height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+
+  background-color: $bg-color;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 25px;
+
+  min-height: 40px;
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
+  padding-left: 86px;
+  box-sizing: border-box;
+
+  list-style: none;
+
+  &__link {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.42;
+
+    color: $text-color-secondary;
+
+    border-bottom: 1px dashed $text-color-secondary;
+
+    transition: all 0.1s ease-out;
+
+    cursor: pointer;
+
+    &_active {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 34px;
+      line-height: 1.18;
+      text-transform: uppercase;
+      color: $text-color;
+
+      border-bottom: none;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 46px;
+
+  overflow: hidden;
+}
+
+.slide-container {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.cards-container {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+
+  width: 100%;
+
+  animation: 0.25s ease-out;
+
+  &_current {
+    z-index: 0;
+  }
+
+  &_new {
+    position: absolute;
+    top: 0;
+  }
+}
+
+.arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: auto;
+  aspect-ratio: 1/1;
+  box-sizing: border-box;
+
+  border: 1px solid $border-color;
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: background-color 0.15s ease-in;
+
+  &:hover {
+    background-color: $border-color;
+  }
+
+  &:active {
+    background-color: transparent;
+  }
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+
+  to {
+    left: -100%;
+    opacity: 0.75;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+    opacity: 0.75;
+  }
+
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@import 'tablet';
+@import 'mobile';

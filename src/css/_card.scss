@@ -1,0 +1,316 @@
+@import 'vars';
+
+.card {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  max-width: 334px;
+  box-sizing: border-box;
+
+  background-color: $bg-color;
+  border: 1px solid #ecf0f4;
+  border-radius: 5px;
+
+  &__img-wrapper {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1;
+    color: $text-color-old-price;
+    text-transform: uppercase;
+
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
+
+    margin-bottom: 10px;
+
+    background-color: $img-bg-color;
+    overflow: hidden;
+  }
+
+  &__img {
+    height: 100%;
+
+    box-shadow: 12px 0 15px -4px $img-shadow-color,
+      -12px 0 8px -4px $img-shadow-color;
+
+    animation: 0.25s ease-out;
+
+    &_current {
+      z-index: 0;
+    }
+
+    &_new {
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  &__img-label {
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    left: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $text-color-label;
+
+    width: 50px;
+    height: auto;
+    aspect-ratio: 1/1;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__iconsWrapper {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__buttonsWrapper {
+    position: absolute;
+    z-index: 1;
+
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5px;
+
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4px;
+
+    max-width: 116px;
+  }
+
+  &__img-button {
+    width: 20px;
+    height: 22px;
+
+    background: linear-gradient(
+      transparent,
+      transparent 10px,
+      $img-button-color 10px,
+      $img-button-color 12px,
+      transparent 12px
+    );
+
+    cursor: pointer;
+
+    &_active {
+      background: linear-gradient(
+        transparent,
+        transparent 10px,
+        $img-button-color-active 10px,
+        $img-button-color-active 12px,
+        transparent 12px
+      );
+    }
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 34px;
+    height: auto;
+    aspect-ratio: 1/1;
+
+    border-radius: 50%;
+    background-color: $bg-color;
+
+    cursor: pointer;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.43;
+
+    text-align: center;
+    color: $text-color;
+
+    max-width: 284px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+
+    cursor: pointer;
+  }
+
+  &__price-footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    box-sizing: border-box;
+  }
+
+  &__priceWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__price {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.1;
+    text-align: center;
+    text-transform: uppercase;
+
+    margin: 0;
+    margin-bottom: 10px;
+
+    &_old {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.57;
+
+      text-decoration-line: line-through;
+
+      color: $text-color-old-price;
+    }
+  }
+
+  &__footer {
+    align-self: flex-end;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin: 0 25px 25px;
+  }
+
+  &__button {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.2;
+
+    color: inherit;
+
+    width: 174px;
+    max-width: 174px;
+    min-height: 50px;
+    box-sizing: border-box;
+
+    padding: 16px;
+
+    background: $button-color;
+    border-radius: 5px;
+    border: none;
+
+    cursor: pointer;
+    transition: background-color 0.15s ease-in;
+
+    &:hover {
+      background-color: $button-color-hover;
+    }
+
+    &:active {
+      background-color: $button-color;
+    }
+  }
+}
+
+.amountWrapper {
+  position: relative;
+
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+
+  width: 100px;
+  max-width: 135px;
+  height: 50px;
+  box-sizing: border-box;
+
+  &__amount {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.17;
+    text-align: center;
+
+    color: $text-color-amount;
+
+    width: 100%;
+    height: auto;
+    padding: 0 36px;
+    box-sizing: border-box;
+
+    background-color: $amount-bg-color;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+  }
+
+  &__changeAmountIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: auto;
+    padding: 14px;
+
+    cursor: pointer;
+
+    &_minus {
+      left: 0;
+      padding-right: 10px;
+    }
+
+    &_plus {
+      right: 0;
+      padding-left: 10px;
+    }
+
+    &_disabled {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.button__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
